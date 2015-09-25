@@ -2,6 +2,7 @@ package com.vedant.login;
 
 import android.app.Activity;
 import android.content.Context;
+import android.content.Intent;
 import android.graphics.Bitmap;
 import android.graphics.Color;
 import android.media.Image;
@@ -89,7 +90,10 @@ public class MainActivity extends Activity {
 
         for (int i = 0; i < usernames.length; i++){
             if (usernameTextBox.getText().toString().equals(usernames[i]) && passwordTextBox.getText().toString().equals(passwords[i])){
-                resultLabel.setText("Success! Welcome " + usernames[i]);
+
+                Intent intent = new Intent(this, MenuActivity.class);
+                startActivity(intent);
+
                 break;
             } else {
                 resultLabel.setText("Incorrect credentials");
